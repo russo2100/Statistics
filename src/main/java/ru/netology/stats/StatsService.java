@@ -45,7 +45,7 @@ public class StatsService<month> {
         return minMonth + 1;
     }
 
-    public static int salesBelowAverage(int[] month) {
+    public static int MonthOfTheLowestSales(int[] month) {
         int average = averageValueOfTheProfitAmount / 12;
         for (int belowAverage : month) {
             if (belowAverage < average) {
@@ -59,7 +59,7 @@ public class StatsService<month> {
     }
 
 
-    public static int salesAboveAverage(int[] month) {
+    public static int MonthOfSaleIsAboveAverage(int[] month) {
         int average = averageValueOfTheProfitAmount / 12;
         for (int aboveAverage: month) {
             if (aboveAverage > average) {
