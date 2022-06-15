@@ -46,7 +46,7 @@ public class StatsService<month> {
     }
 
     public static int salesBelowAverage(int[] month) {
-        int average = 15;
+        int average = averageValueOfTheProfitAmount / 12;
         for (int belowAverage : month) {
             if (belowAverage < average) {
                 System.out.println(belowAverage);
@@ -60,7 +60,7 @@ public class StatsService<month> {
 
 
     public static int salesAboveAverage(int[] month) {
-        int average = 15;
+        int average = averageValueOfTheProfitAmount / 12;
         for (int aboveAverage: month) {
             if (aboveAverage > average) {
                 System.out.println(aboveAverage);
