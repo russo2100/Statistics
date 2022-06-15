@@ -11,7 +11,7 @@ public class StatsService<month> {
     }
 
     public static int averageValueOfTheProfitAmount(int[] sales) {
-        int sum = 180;
+        int sum = {8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18};
         return (int) ((double) sum / sales.length);
     }
 
