@@ -8,11 +8,11 @@ public class StatsServiceTest {
     @Test
     public void monthMaximumSumSales() {
         StatsService service = new StatsService();
-        int sum[] = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+       long[] sum = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedMonth = 180;
+        long expectedMonth = 8+15+13+15+17+20+19+20+7+14+14+18;
 
-        int actualMonth = service.totalOfAllSales(sum);
+        long actualMonth = service.totalOfAllSales(sum);
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
@@ -21,10 +21,10 @@ public class StatsServiceTest {
     @Test
     public void averageValueOfTheProfitAmount() {
         StatsService service = new StatsService();
-        int[] average = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] average = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedSum = 15;
-        int actualSum = service.averageValueOfTheProfitAmount(average);
+        long expectedSum = 15;
+        long actualSum = service.averageValueOfTheProfitAmount(average);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
@@ -57,24 +57,24 @@ public class StatsServiceTest {
 
 
     @Test
-    public void salesBelowAverage() {
+    public void MonthOfTheLowestSales() {
         StatsService service = new StatsService();
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+       long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverage = 15;
-        int actualAverage = service.salesBelowAverage(month);
+        long expectedAverage = 15;
+         long actualAverage = (long) service.MonthOfTheLowestSales(month);
 
         Assertions.assertEquals(expectedAverage,actualAverage);
     }
 
 
     @Test
-    public void salesAboveAverage() {
+    public void MonthOfSaleIsAboveAverage() {
         StatsService service = new StatsService();
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+       long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedAverage = 15;
-        int actualAverage = service.salesAboveAverage(month);
+        int actualAverage = (int) service.MonthOfSaleIsAboveAverage(month);
 
         Assertions.assertEquals(expectedAverage,actualAverage);
     }

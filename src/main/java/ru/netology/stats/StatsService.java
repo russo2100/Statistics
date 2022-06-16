@@ -1,31 +1,29 @@
 package ru.netology.stats;
 
-public class StatsService<month> {
+public class StatsService {
 
-    public static int totalOfAllSales(int[] sales) {
-        int sum = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sum += sales[i];
+    public long totalOfAllSales(long[] sales) {
+        long sum = 0;
+        for (long sale : sales) {
+            sum += sale;
         }
         return sum;
     }
 
-    public static int averageValueOfTheProfitAmount(int[] sales) {
-        int sum = {8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18};
-        return (int) ((double) sum / sales.length);
+    public long averageValueOfTheProfitAmount(long[] sales) {
+       long sum = totalOfAllSales(sales);
+        return  sum / 12;
     }
 
 
     public int maxSales(long[] sales) {
         int minMonth = 0;
-        int month = 0; // переменная для индекса рассматриваемого месяца в массиве
+        int month = 0;
         for (long sale : sales) {
-            // sales[minMonth] - продажи в месяце minMonth
-            // sale - продажи в рассматриваемом месяце
             if (sale > sales[minMonth]) {
                 minMonth = month;
             }
-            month = month + 1; // следующий рассматриваемый месяц имеет номер на 1 больше
+            month = month + 1;
         }
         return minMonth + 1;
     }
@@ -33,23 +31,21 @@ public class StatsService<month> {
 
     public int minSales(long[] sales) {
         int minMonth = 0;
-        int month = 0; // переменная для индекса рассматриваемого месяца в массиве
+        int month = 0;
         for (long sale : sales) {
-            // sales[minMonth] - продажи в месяце minMonth
-            // sale - продажи в рассматриваемом месяце
             if (sale <= sales[minMonth]) {
                 minMonth = month;
             }
-            month = month + 1; // следующий рассматриваемый месяц имеет номер на 1 больше
+            month = month + 1;
         }
         return minMonth + 1;
     }
 
-    public static int MonthOfTheLowestSales(int[] month) {
-        int average = averageValueOfTheProfitAmount / 12;
-        for (int belowAverage : month) {
-            if (belowAverage < average) {
-                System.out.println(belowAverage);
+    public long MonthOfTheLowestSales(long[] month) {
+        long average = averageValueOfTheProfitAmount(month);
+        for (long MonthOfTheLowestSales : month) {
+            if (MonthOfTheLowestSales < average) {
+                System.out.println(MonthOfTheLowestSales);
             }
 
 
@@ -59,9 +55,9 @@ public class StatsService<month> {
     }
 
 
-    public static int MonthOfSaleIsAboveAverage(int[] month) {
-        int average = averageValueOfTheProfitAmount / 12;
-        for (int aboveAverage: month) {
+    public long MonthOfSaleIsAboveAverage(long[] month) {
+        long average = averageValueOfTheProfitAmount(month);
+        for (long aboveAverage: month) {
             if (aboveAverage > average) {
                 System.out.println(aboveAverage);
             }
