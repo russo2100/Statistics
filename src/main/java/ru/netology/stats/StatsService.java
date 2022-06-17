@@ -41,30 +41,32 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public long MonthOfTheLowestSales(long[] month) {
+    public long monthOfTheLowestSales(long[] month) {
+        int count = 0;
         long average = averageValueOfTheProfitAmount(month);
-        for (long MonthOfTheLowestSales : month) {
-            if (MonthOfTheLowestSales < average) {
-                System.out.println(MonthOfTheLowestSales);
+        for (long aboveAverage: month) {
+            if (aboveAverage < average) {
+                count++;
             }
 
 
         }
-        return average;
+        return count;
 
     }
 
 
-    public long MonthOfSaleIsAboveAverage(long[] month) {
+    public long monthOfSaleIsAboveAverage(long[] month) {
+        int count = 0;
         long average = averageValueOfTheProfitAmount(month);
         for (long aboveAverage: month) {
             if (aboveAverage > average) {
-                System.out.println(aboveAverage);
+                count++;
             }
 
 
         }
-        return average;
+        return count;
 
     }
 

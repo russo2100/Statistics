@@ -57,24 +57,24 @@ public class StatsServiceTest {
 
 
     @Test
-    public void MonthOfTheLowestSales() {
+    public void monthOfTheLowestSales() {
         StatsService service = new StatsService();
        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        long expectedAverage = 15;
-         long actualAverage = (long) service.MonthOfTheLowestSales(month);
+        long expectedAverage = 5;
+         long actualAverage = (long) service.monthOfTheLowestSales(month);
 
         Assertions.assertEquals(expectedAverage,actualAverage);
     }
 
 
     @Test
-    public void MonthOfSaleIsAboveAverage() {
+    public void monthOfSaleIsAboveAverage() {
         StatsService service = new StatsService();
        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverage = 15;
-        int actualAverage = (int) service.MonthOfSaleIsAboveAverage(month);
+        int expectedAverage = 5;
+        int actualAverage = (int) service.monthOfSaleIsAboveAverage(month);
 
         Assertions.assertEquals(expectedAverage,actualAverage);
     }
